@@ -6,6 +6,7 @@ phases = {1:"New Moon", 2:"New Moon", 3:"Wax Quarter", 4:"Wax Quarter",
           13:"Wan Half", 14:"Wan Half", 15:"Wan Quarter", 16:"Wan Quarter"}
 
 remainder = day%16
+nextFullMoon = day
 
 # The remainder values go from 0 to 15, but there's no day "0" in the game, so,
 # whenever a day number divisible by 16 shows up, I just force the remainder to
@@ -13,4 +14,15 @@ remainder = day%16
 if remainder ==  0:
     remainder = 16
 
-print(f'The moon phase will be "{phases[remainder]}"')
+if remainder < 9:
+    fullMoonDistance = 9 - remainder
+elif remainder == 9:
+    fullMoonDistance = 1
+else:
+    fullMoonDistance = 25 - remainder
+
+nextFullMoon += fullMoonDistance
+
+print(f'Tonight the moon phase will be "{phases[remainder]}"')
+print(f'Next Full Moon: In {fullMoonDistance} day(s) [day {nextFullMoon}]')
+
