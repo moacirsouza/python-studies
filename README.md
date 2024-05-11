@@ -1,2 +1,2 @@
-# python-studies
+# Python Studies
 My Python Studies
