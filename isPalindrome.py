@@ -18,4 +18,4 @@ if isPalindrome(ui):
 else:
   nope="NOT "
 
-print(f"It's {nope}a palindrom!")
+print(f"It's {nope}a palindrome!")
